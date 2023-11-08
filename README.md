@@ -28,5 +28,6 @@ we want to be able to manage the objects of our project:
 **Example:**
 
 (hbnb) help quit
+
 Quit command to exit the program
 
