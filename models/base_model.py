@@ -40,7 +40,9 @@ class BaseModel:
         if len(kwargs) != 0:
             tformat = "%Y-%m-%dT%H:%M:%S.%f" 
             for key, value in kwargs.items():
-                if (key == "created_at"):
+                if key == "__class__":
+                    continue
+                elif (key == "created_at"):
                     self.created_at = datetime.strptime(value, tformat)
                 elif (key == "updated_at"):
                     self.updated_at = datetime.strptime(value, tformat)
