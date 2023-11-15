@@ -7,9 +7,11 @@
 import json
 import os
 from models.base_model import BaseModel
+from models.user import User
 
 new_dict = {
-    "BaseModel": BaseModel
+    "BaseModel": BaseModel,
+    "User": User
     }
 
 
