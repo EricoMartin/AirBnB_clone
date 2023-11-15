@@ -15,9 +15,11 @@ class HBNBCommand(cmd.Cmd):
         do_EOF()
 
     def do_EOF(self, line):
+        """ Returns the end of file """
         return True
 
     def emptyline(self, line):
+        """ Override the emptyline method """
         return self.prompt
 
     if __name__ == '__main__':
