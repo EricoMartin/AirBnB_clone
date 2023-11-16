@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for models/user"""
-
+"""Defines unittests for models/user
 
 Unittest classes:
     TestUser_instantiation

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for the console"""
+"""Defines unittests for the console
 
 
 Unittest classes:

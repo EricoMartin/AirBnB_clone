@@ -45,12 +45,12 @@ class FileStorage:
         """ Serializes __objects to a JSON file """
 
         my_dict = FileStorage.__objects
-        obj_dict = {}
+        objdict = {}
         for obj in my_dict.keys():
-            obj_dict[obj] = my_dict[obj].to_dict()
+            objdict[obj] = my_dict[obj].to_dict()
 
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            json.dump(obj_dict, f)
+            json.dump(objdict, f)
 
     def reload(self):
         """ deserializes a JSON file to __objects

@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines unittests for models/state"""
+"""Defines unittests for models/state
 
 
 Unittest classes:
