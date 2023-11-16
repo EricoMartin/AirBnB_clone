@@ -6,7 +6,7 @@
 """
 import uuid
 from datetime import datetime
-import models 
+import models
 
 
 class BaseModel:
@@ -17,12 +17,12 @@ class BaseModel:
         Private Class Attributes:
         __nb_object (int): number of object instances.
     """
-    
+
     def __init__(self, *args, **kwargs):
         """
             Superclass Constructor initialization.
             This method instantiates every newly created object
-        
+
             Args:
                 *args: variable list of args
                 **kwargs: variable list of keyworded args
@@ -38,7 +38,7 @@ class BaseModel:
         self.created_at = datetime.now()
 
         if len(kwargs) != 0:
-            tformat = "%Y-%m-%dT%H:%M:%S.%f" 
+            tformat = "%Y-%m-%dT%H:%M:%S.%f"
             for key, value in kwargs.items():
                 if key == "__class__":
                     continue
@@ -57,12 +57,13 @@ class BaseModel:
             prints the string representation of the object instance
             print: [<class name>] (<self.id>) <self.__dict__>
         """
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, self.__dict__)
 
     def save(self):
         """
             A function that saves the data to our database.
-            it also updates the public instance attribute updated_at 
+            it also updates the public instance attribute updated_at
             with the current datetime
         """
         self.updated_at = datetime.now()

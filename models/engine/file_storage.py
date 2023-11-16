@@ -33,7 +33,7 @@ class FileStorage:
     def new(self, obj):
         """
         sets in __objects the obj with key <obj class name>.id
-    
+
         Args:
             obj: The current object to get its id
         """
@@ -48,14 +48,14 @@ class FileStorage:
         obj_dict = {}
         for obj in my_dict.keys():
             obj_dict[obj] = my_dict[obj].to_dict()
-        
+
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
             json.dump(obj_dict, f)
 
     def reload(self):
-        """ deserializes a JSON file to __objects 
+        """ deserializes a JSON file to __objects
             (only if the JSON file (__file_path) exists
-        """ 
+        """
         try:
             with open(FileStorage.__file_path) as f:
                 new_data = json.load(f)
@@ -63,7 +63,7 @@ class FileStorage:
                 for val in new_data.values():
                     cls_name = val["__class__"]
                     del val["__class__"]
-                    self.new(eval(cls_name)(**val))            
+                    self.new(eval(cls_name)(**val))
 
         except Exception:
-                pass
+            pass

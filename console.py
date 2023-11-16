@@ -12,6 +12,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 class HBNBCommand(cmd.Cmd):
     """ A console class that contains the entry point of the
         command interpreter
@@ -38,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """ Override the emptyline method """
         pass
-    
+
     def do_create(self, arg):
         """ Creates a new instance of BaseModel
             and saves it to storage
@@ -162,6 +163,7 @@ class HBNBCommand(cmd.Cmd):
                     obj.__dict__[k] = v
         storage.save()
 
+
 def parse(arg):
     """ parse arguments for overriden and custom methods """
 
@@ -180,6 +182,7 @@ def parse(arg):
         rex = [i.strip(",") for i in lex]
         rex.append(curly_braces.group())
         return rex
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
